@@ -1,0 +1,41 @@
+class GFG { 
+
+	
+	public static boolean
+	isValidPassword(String password) 
+	{ 
+ 
+		String regex = "^(?=.*[0-9])"
+					+ "(?=.*[a-z])(?=.*[A-Z])"
+					+ "(?=.*[@#$%^&+=])"
+					+ "(?=\\S+$).{8,20}$"; 
+		Pattern p = Pattern.compile(regex); 
+		if (password == null) { 
+			return false; 
+		} 
+
+		Matcher m = p.matcher(password); 
+		return m.matches(); 
+	} 
+
+	 
+	public static void main(String args[]) 
+	{ 
+
+		String str1 = "Divya@999"; 
+		System.out.println(isValidPassword(str1)); 
+
+		String str2 = "19BQ1A05P2"; 
+		System.out.println(isValidPassword(str2)); 
+
+		String str3 = "CSE-D"; 
+		System.out.println(isValidPassword(str3)); 
+
+		String str4 = "5P2"; 
+		System.out.println(isValidPassword(str4)); 
+ 		
+		String str5 = "Guntur"; 
+		System.out.println(isValidPassword(str5)); 
+ 
+	} 
+} 
